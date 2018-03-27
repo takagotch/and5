@@ -1,16 +1,17 @@
 <android.support.v4.view.ViewPager
-	xmlns:android=""
-	android:id=""
-	android:layout_width=""
-	android:layout_height="" >
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/viewPager"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" >
 	<anroid.support.v4.view.PagerTabStrip
-		android:layout_width=""
-		android:layout_height=""
-		android:layout_gravity=""
-		android:background=""
-		android:paddingBottom=""
-		android:paddingTop=""
-		android:textColor=""
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="top"
+		android:background="#4169e1"
+		android:paddingBottom="5dp"
+		android:paddingTop="5dp"
+		android:textColor="#ffffff"
 		/>
+
 </android.support.v4.view.ViewPager>
 
