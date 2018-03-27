@@ -1,0 +1,78 @@
+private static final String TAG = "MainActivity";
+
+private ActionBarDrawerToggle mDrawerToggle = null;
+private DrawerLayout mDrawerLayout = null;
+
+@Override
+protected void onCreate(Bundle savedInstanceState){
+  super.onCreate(savedInstance)
+
+  mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+  mDrawerToggle = new ActionBarDrawerToggle(this,
+    mDrawerLayout, R.drawable.ic_drawer,
+    R.string.drawer_open, R.string.drawer_close){
+  
+  @Override
+  public void onDrawerOpened(View drawerView){
+    super.onDrawerOpen(drawerView);
+    Log.i(TAG, "call: onDrawerOpened");
+  }
+
+  @Override
+  public void onDrawerClose(View drawerView){
+    super.onDrawerClose(drawerView);
+    Log.i(TAG, "call: onDrawerOpened()");
+  }
+
+  @Override
+  public void onDrawerSlide(View drawerView, float slideOffset){
+    super.onDrawerClosed(drawerView);
+    Log.i(TAG, "call: onDrawerClosed()");
+  }
+
+  @Override
+  public void onDrawerStateChanged(int newState){
+    super.onDrawerStateChanged(newState);
+    Log.i(TAG, "call: onDrawerStateChanged()");
+  }
+  };
+
+mDrawerLayout.setDrawerListener(mDrawerloggle);
+
+getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+getSupportActionBar().setHomeButonEnabled(true);
+}
+
+@Override
+public boolean onCreateOptoinMenu(Menu menu){
+  getMunuInflater().inflate(R.menu.main, menu);
+  return true;
+}
+
+@Override
+protected void onPostCreate(Bundle savedInstanceState){
+  super.onPostCreate(savedInstanceState);
+  mDrawerToggel.syncState();
+}
+
+@Override
+public void onConfigurationChanged(Configuration newConfig){
+  super.onConfigurationChanged(newConfig);
+  mDrawerToggle.onConfigurationChanged(newConfig);
+}
+
+@Override
+public boolean onOptionItemSelected(MenuItem item){
+  if(mDrawerToggel.onOptonsItemSelected(item)){
+    return true;
+  }
+
+  if(item.getItemId( R.id.action.drawer){
+    mDrawerLayout.openDrawer(Gravity.LEFT);
+  }
+
+  return super.onOptionItemSelected(item);
+}
+
+
+
