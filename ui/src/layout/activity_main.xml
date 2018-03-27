@@ -1,0 +1,27 @@
+<android.support.v4.widget.DrawerLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/drawer_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" >
+	<LinearLayout
+		android:id=""
+		android:layout_width=""
+		android:layout_height=""
+		android:orientation=""
+		/>
+	<LinearLayout
+		android:id=""
+		android:layout_width=""
+		android:layout_height=""
+		android:layout_gravity=""
+		android:background=""
+		android:orientation="" >
+		<TextView
+			android:layout_width=""
+			android:layout_height=""
+			android:text=""
+			android:textSize="" >
+	</LenearLayout>
+</android.support.v4.widget.DrawerLayout>
+
+
