@@ -1,5 +1,12 @@
 //ui_NavigateionDrawer
 //
+//ActionBarDrawerToggle(Activity activity, DrawerLayout drawerLayout,
+//                      int drawerImageRes, int openDrawerContentDesRes, int closeDrawerContentDescRes)
+//void onDrawerOpened(View drawerView)
+//
+//
+//
+//
 
 private static final String TAG = "MainActivity";
 
