@@ -3,9 +3,13 @@
 //ActionBarDrawerToggle(Activity activity, DrawerLayout drawerLayout,
 //                      int drawerImageRes, int openDrawerContentDesRes, int closeDrawerContentDescRes)
 //void onDrawerOpened(View drawerView)
+//void onDrawerClosed(View drawerView)
+//void onDrawerSlide(View drawerView, float slideOffset)
+//void onDrawerStateChanged(int syncState())
+//void syncState()
 //
-//
-//
+//void setDrawerListner(DrawerListner listener)
+//void closeDrawers()
 //
 
 private static final String TAG = "MainActivity";
