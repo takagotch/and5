@@ -1,0 +1,15 @@
+//ui_PreferenceActivity
+
+<PreferenceCategory
+	android:title="RINGTONE">
+	<RingtonePreference
+		android:key="key_ringtone"
+		android:title="RING SET"
+		android:summary="RING LIST"
+		android:ringtoneType="ringtone"
+		android:showDefault="true"
+		android:showSilent="false"
+		/>
+</Preference>
+
+
