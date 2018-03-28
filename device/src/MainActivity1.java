@@ -1,4 +1,12 @@
-//
+//Handler()
+//Handler(Handler.Callback callback)
+//Handler(Looper looper)
+//Handler(Looper looper, Handler.Callback callback)
+//void handleMessage(Message msg)
+//boolean post(Runnable r)
+//boolean sendEmptyMessage(int what)
+//boolean sendEmptyMessageAtTime(int what, long uptimeMillis)
+//boolean sendEmptyMessageDelayed(int what, long delayMillis)
 //
 //device_Handler
 
