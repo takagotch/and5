@@ -1,4 +1,6 @@
 //provider_Contacts
+//
+//android.permission.READ_CONTACTS
 
 private String[] CONTACTS_PROJECTION = new String[]{
   ContactsContract.CommonDataKinds.Phone._ID,
