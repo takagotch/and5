@@ -1,4 +1,16 @@
 //HttpGet(URI uri)
+//HttpGet(String uri)
+//
+//HttpPost(URI uri)
+//HttpPost(String uri)
+//
+//DefaultHttpClient(ClientConnectionManager common, HttpParams params)
+//DefaultHttpClient(HttpParams params)
+//DefaultHttpClient()
+//HttpResponse execute(HttpUriRequest request)
+//
+//StatusLine getStatusLine()
+//HttpEntity()
 //
 //device_Network
 
