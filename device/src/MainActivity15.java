@@ -1,5 +1,15 @@
+//boolean isWifiEnabled()
+//int getWifiState()
 //
+//WIFI_STATE_DISABLING
+//WIFI_STATE_DISABLED
+//WIFI_STATE_ENABLING
+//WIFI_STATE_ENABLED
+//WIFI_STATE_UNKNOWN
 //
+//android.permission.ACCESS_WIFI_STATE
+//
+//device_WifiState
 
 WifiManager wifiMgr = (WifiManager) getSystemService(WIFI_SERVICE);
 boolean bEnabled = wifiMgr.isWifiEnabled();
