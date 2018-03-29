@@ -1,4 +1,15 @@
-//Grond
+//GroundOverlay addGroundOverlay(GroundOverlayOptions options)
+//static CameraUpdate newLatLngZoom(LatLng latLng, float zoom)
+//static BitmapDescriptorfromAsset(String assetName)
+//static BitmapDescriptorfromBitmap(Bitmap image)
+//static BitmapDescriptorfromFile(String fileName)
+//static BitmapDescriptorfromPath(String absolutePath)
+//static BitmapDescriptorfromResource(int resourceId)
+//
+//GroundOverlayOptions image(BitmapDescriptor descriptor)
+//GroundOverlayOptions anchor(float u, float v)
+//GroundOverlayOptions position(LatLng location, float width, float height)
+//void setTransparency(float transparency)
 //
 //maps_Overlay
 FragmentManager fragmentManager = getSupportFragmentManager();
