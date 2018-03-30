@@ -1,7 +1,26 @@
 /*
+
+
 android:repeatMode
-
-
+android:startOffset
+android:zAdjustment
+android:fromAipha
+android:toAlpha
+android:interpolator
+android:fromXScale
+android:fromYScale
+android:toXScale
+android:toYScale
+android:pivotXType
+android:pivotYType
+android:pivotX
+android:pivotY
+android:fromXDelta
+android:fromYDelta
+android:fromDegrees
+android:toDegrees
+android:pivotX
+android:pivotY
 */
 
 <set xmlns:android="http://schemas.android.com/apk/res/android"
