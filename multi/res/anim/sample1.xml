@@ -1,0 +1,16 @@
+<set xmlns:android=""
+	android:interpolator="">
+	<translate
+		android:toXDelta=""
+		android:toYDelta=""
+		android:duration=""
+		/>
+	<alpha
+		android:fromAlpha=""
+		android:toAlpha=""
+		android:duration=""
+		/>
+</set>
+
+
+
