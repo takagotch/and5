@@ -1,5 +1,9 @@
-//
-//
+//WallpaperService.Engine onCreateEngine()
+//Engine(Resources r)
+//void onSurfaceCreated(SurfaceHolder holder)
+//void onSurfaceChanged(SurfaceHolder holder, int format, int width, int height)
+//void onSurfaceDestroyed(SurfaceHolder holder)
+//void onVisibilityChanged(boolean visible)
 
 public class SampleLiveWallpaperService extends WallpapaerService {
   @Override
