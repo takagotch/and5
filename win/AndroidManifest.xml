@@ -1,0 +1,9 @@
+/*
+mcc, mnc, local, touchscreen, keyboard, keyboardHidden, navigation, screenLayout, fontScale, uiMode, orientation, screenSize, smallestScreenSize
+*/
+
+<activity
+	android:configChanges="orientation|keyboradHiden|screenSize"
+	/>
+
+
