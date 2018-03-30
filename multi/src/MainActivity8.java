@@ -50,8 +50,8 @@ protected void onResume(){
 
   arraySound = new ArrayList<Integer>();
   mPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
-  arraySound.add();
-  arraySound.add();
+  arraySound.add(0, mPool.load(this, R.raw.cat, 1));
+  arraySound.add(1, mPool.load(), 1);
   arraySound.add();
   arraySound.add();
   arraySound.add();
