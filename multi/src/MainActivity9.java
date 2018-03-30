@@ -31,15 +31,21 @@
 //media_Recoder
 
 if(isChecked){
-  mRecorder = new MediaRecorder();
-  mRecorder.setAudioSource();
-  mRecorder.setOutputFormat();
-  mRecorder.setAudioEncoder();
+  mRecorder = new MediaRecorder(MediaRecorder.AudioSource.MIC);
+  mRecorder.setAudioSource(MediaRecorder.OutputFormat.MPEG_4);
+  mRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+  mRecorder.setAudioEncoder(MediaRecorder.AudioEncorder.DEFAULT);
 
-  String path = Environment.getExternalStorageDirectory() + "";
+  String path = Environment.getExternalStorageDirectory() + "/record_audio.mp4";
   mRecorder.setOutputFile(path);
 
-  try{} catch(){} catch(){}
+  try{
+    mRecorder.prepare();
+  } catch(IlllegalStateException e){
+    e.printStackTrace();
+  } catch(IOException e){
+    e.printStackTrace();
+  }
 
   mRecoder.start();
 } else {
