@@ -1,6 +1,13 @@
 /*
-
-
+<set></set>
+<alpha></alpha>
+<scale></scale>
+<transalate></translate>
+<rotate></rotate>
+android:duration
+android:fillBefore
+android:fillEnabled
+android:repeatCount
 android:repeatMode
 android:startOffset
 android:zAdjustment
