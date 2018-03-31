@@ -15,4 +15,12 @@ public voidonClickEvent(View v){
   Browser.sendString(this, "SEND");
 }
 
+//static Cursor getAllBookmarks(ContentResolver cr)
+//static void saveBookmark(Context c, String title, String url)
+//
+//com.android.browser.permission.READ_HISTORY_BOOKMARKS
+//com.android.browser.permission.WRITE_HISTROY_BOOKMARKS
+
+Browser.saveBookmark(this, "Author", "http://buildbox.net/");
+
 
