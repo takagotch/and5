@@ -1,0 +1,5 @@
+<TextView
+	style="@style/MyStyle"
+	android:text="@string/hello" />
+
+
