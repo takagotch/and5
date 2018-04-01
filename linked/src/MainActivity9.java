@@ -121,7 +121,23 @@ public void callAllApplication(View v){
 }
 public void callDownloadApplication(View v){
   Intent intent = new Intent();
-  intent.
+  intent.setAction(android.provider.Settings.ACTION_MANAGE_APPLICATION_SETTINGS);
+  startActivity(intent);
 }
+public void callMemoryCard(View v){}
+public void callNetwork(View v){}
+public void callNFC(View v){}
+public void callNFCSharing(View v){}
+public void callPrivacy(){}
+public void callLaunch(){}
+public void callSearch(){}
+public void callSecurity(){}
+public void callSound(){}
+public void callSync(){}
+public void callUserDictionary(){}
+public void callWifiP(){}
+public void callWifif(){}
+public void callWireles(){}
+
 
 
