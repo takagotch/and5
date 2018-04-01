@@ -124,20 +124,36 @@ public void callDownloadApplication(View v){
   intent.setAction(android.provider.Settings.ACTION_MANAGE_APPLICATION_SETTINGS);
   startActivity(intent);
 }
-public void callMemoryCard(View v){}
-public void callNetwork(View v){}
-public void callNFC(View v){}
+public void callMemoryCard(View v){
+  Intent intent = new Intent();
+  intent.setAction(android.provider.Settings.ACTION_MEMORY_CARD_SETTINGS);
+  startActivity(intent);
+}
+public void callNetwork(View v){
+  Intent intent = new Intent();
+  intent.setAction(android.provider.Settings.ACTION_NETWORK_OPERATOR_SETTINGS);
+  startActivity(intent);
+}
+public void callNFC(View v){
+  Intent intent = new Intent();
+}
 public void callNFCSharing(View v){}
-public void callPrivacy(){}
-public void callLaunch(){}
-public void callSearch(){}
-public void callSecurity(){}
-public void callSound(){}
-public void callSync(){}
-public void callUserDictionary(){}
-public void callWifiP(){}
-public void callWifif(){}
-public void callWireles(){}
+public void callPrivacy(View v){}
+public void callLaunch(View v){}
+public void callSearch(View v){}
+public void callSecurity(View v){}
+public void callSound(View v){}
+public void callSync(View v){}
+public void callUserDictionary(View v){}
+public void callWifiP(View v){
+
+}
+public void callWifif(View v){
+
+}
+public void callWireles(View v){
+
+}
 
 
 
