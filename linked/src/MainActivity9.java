@@ -136,23 +136,63 @@ public void callNetwork(View v){
 }
 public void callNFC(View v){
   Intent intent = new Intent();
+  intent.setAction(android.provider.Settings.ACTION_NFC_SETTINGS);
+  startActivity(intent);
 }
-public void callNFCSharing(View v){}
-public void callPrivacy(View v){}
-public void callLaunch(View v){}
-public void callSearch(View v){}
-public void callSecurity(View v){}
-public void callSound(View v){}
-public void callSync(View v){}
-public void callUserDictionary(View v){}
+public void callNFCSharing(View v){
+  Intent intent = new Intent();
+  intent.setAction(android.provider.Settings.ACTION_NFCSHARING_SETTINGS);
+  startActivity(intent);
+}
+public void callPrivacy(View v){
+  Intent intent = new Intent();
+  intent.setAction(android.provider.Settings.ACTION_PRIVACY_SETTINGS);
+  startActivity(intent);
+}
+public void callLaunch(View v){
+  Intent intent = new Intent();
+  intent.setAction(android.provider.Settings.ACTION_QUICK_LAUCH_SETTINGS);
+  startActivity(intent);
+}
+public void callSearch(View v){
+  Intent intent = new Intent();
+  intent.setAction(android.provider.Settings.ACTION_SEARCH_SESTTINGS);
+  startActivity(intent);
+}
+public void callSecurity(View v){
+  Intent intent = new Intent();
+  intent.setAction(android.provider.Settigns.ACTION_SECURITY_SETTINGS);
+  startActivity(intent);
+}
+public void callSound(View v){
+  Intent intent = new Intent();
+  intent.setAction(android.provider.Settings.ACTION_SOUND_SETTINGS);
+  startActivity(intent);
+}
+public void callSync(View v){
+  Intent intent = new Intent();
+  intent.setAction(android.provider.Settings.ACTION_SYNC_SETTINGS);
+  startActivity(intent);
+}
+public void callUserDictionary(View v){
+  Intent intent = new Intent();
+  intent.setAction(android.provider.Settings.ACTION_USER_DICTIONARY_SETTINGS);
+  startActivity(intent);
+}
 public void callWifiP(View v){
-
+  Intent intent = new Intent();
+  intent.setAction(android.provider.Settings.ACTION_WIFI_IP_SETTINGS);
+  startActivity(intent);
 }
 public void callWifif(View v){
-
+  Intent intent = new Intent();
+  intent.setAction(android.provider.Settings.ACTION_WIFI_SETTINGS);
+  startActivity(intent);
 }
 public void callWireles(View v){
-
+  Intent intent = new Intent();
+  intent.setAction(android.provider.Settings.ACTION_WIRELESS_SETTINGS);
+  startActivity(intent);
 }
 
 

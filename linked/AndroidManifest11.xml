@@ -1,0 +1,11 @@
+<activity
+	android:name=".SubActivity"
+	android:label="@string/title_activity.sub" />
+<activity
+	android:name=".ReturnActivity"
+	android:label="@string/title_activity_return" />
+<activity
+	android:name=".IntentActivity"
+	android:label="@string/title_activity_intent" />
+
+
