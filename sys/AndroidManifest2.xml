@@ -1,0 +1,8 @@
+<receiver
+	android:name=".ManiActivityInstalledReceiver">
+	<intent-filter>
+		<action android:name="android.intent.action.PACKAGE_ADDED" />
+		<data android:scheme="package" />
+	</intent-filter>
+</receiver>
+
