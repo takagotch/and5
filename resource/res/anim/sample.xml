@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+	anroid:interpolator="@android:anim/accelerate_interpolator">
+	<translate
+		android:toXDelta="100"
+		android:toYDelta="170"
+		android:duration="3000"
+		/>
+	<alpha
+		android:fromAlpha="1.0"
+		android:toAlpha="0.3"
+		android:duration="3000"
+		/>
+</set>
+
+
+<resources>
+	<string-array name="array_number">
+		<item></item>
+		<item></item>
+		<item></item>
+	</string-array>
+
+
+	<dimen name="text_size">20sp</dimen>
+	<dimen name="button_size">160dp</dimen>
+</resources>
+
+
+<level-list
+	xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item
+		android:maxlevel="0"
+		android:drawable="@drawable/level_normal" />
+	<item
+		android:maxlevel="1"
+		android:drawable="@drawable/level_alert" />
+</level-list>
+
+<wallpaper xmlns:android="http://schemas.android.com/apk/res/android"
+	android:thumbnail="@drawable/ic_launcher"
+	android:description="@string/pref_description"
+	android:settingActivity="net.buildbox.pokeri.ui_livewallpaper.SamplePreferenceActivity"
+	/>
+
