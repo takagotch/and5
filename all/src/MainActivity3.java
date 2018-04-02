@@ -54,6 +54,39 @@ public boolean onOptionsItemSelected(MenuItem item){
 
 @Override
 public boolean onCreateOptionMenu(Menu menu){
-  getMenuInflater().inflate();
+  getMenuInflater().inflate(R.menu.main, menu);
+
+  MenuItem item = menu.add(Menu.NONE, MENU_SAMPLE, 200, "MENU");
+  MenuItemCompat.set(ShowAsAction(item, MenuItemCompat.SHOW_AS_ACTION_IF_ROOM));
+
+  return true;
 }
+
+//int getNavigationMode()
+//void setNavigationMode(int mode)
+//
+//NAVIGATION_MODE_STANDARD
+//NAVIGATION_MODE_LIST
+//NAVIGATION_MODE_TABS
+
+ActionBar actionBar = getSupportActionBar();
+
+actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+
+//ActionBar.Tab newTab()
+//void addTab(ActionBar.Tab tab)
+//
+//ActionBar.Tab setText(int resId)
+//ActionBar.Tab setText(CharSequence text)
+
+ActionBar actionBar = getSupportActionBar();
+
+actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+actionBar.addTab(actionBar.newTab().setText("TAB1")
+		.setTabListener(mTabListener));
+actionBar.addTab(actionBar.newTab().setText("TAB2")
+		.setTabListener(mTabListener));
+
+
 
