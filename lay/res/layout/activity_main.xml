@@ -1,0 +1,214 @@
+//android:shrinkColumns
+//android:stretchColumns
+//
+//android:layout_span
+//android:layout_column
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<TableRow>
+		<Button android:text="2"
+			android:layout_column="1" />
+		<Button android:text="3" />
+	</TableRow>
+	<TableRow>
+		<Button android:text="2"
+			android:layout_columns="1" />
+		<Button android:text="2" />
+	</TableRow>
+	<TableRow>
+		<Button android:text="4" />
+		<Button android:text="5"
+			android:layout_span="2"
+			/>
+	</TableRow>
+	<TableRow>
+		<Button android:text="7" />
+		<Button android:text="8" />
+		<Button android:text="9" />
+	</TableRow>
+</TableLayout>
+
+
+
+//anroid:orientation
+//vertical
+//horizontal
+<LinearLayout
+	xmlns:android="http://schemas.android.com/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+</LinearLayout>
+
+
+
+//
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_widht="match_parent"
+	android:layout_height="match_parent" >
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="centerTop"
+		android:text="SHOW ABOVE"
+		/>
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="button"
+		android:text="BUTTON"
+		/>
+</FrameLayout>
+
+
+/*
+android:layout_centerInParent
+android:layout_alignParentLeft
+android:layout_centerHorizontal
+android:layout_alignParentRight
+android:layout_centerParentTop
+android:layout_alignParentTop
+android:layout_centerVertical
+android:layout_alignParentBottom
+android:layout_toLeftOf
+android:layout_toRightOf
+android:layout_above
+android:layout_below
+android:layout_alignLeft
+android:layout_alignRight
+android:layout_alignTop
+android:layout_alignBottom
+android:layout_Baseline
+android:layout_alignBaseline
+android:layout_alignWithParentMissing
+*/
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:paddingLeft="@dimen/activity_vertical_margin"
+	android:paddingRight="@dimen/activity_horizontal_margin"
+	android:paddingTop="@dimen/activity_vertical_margin"
+	tools:context=".MainActivity" >
+	<Button
+		android:id="@+id/btnCenter"
+		android:layout_centerInParent="true"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="CENTER"
+		/>
+	<Button
+		android:id="@+id/btnLeft"
+		android:layout_toLeftOf="@id/btnCenter"
+		android:layout_centerVertical="true"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="LEFT" />
+	<Button
+		android:layout_above="@id/btnLeft"
+		android:layout_alignRight="@id/btnLeft"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="LEFTABOVE"
+		/>
+</RelativeLayout>
+
+/*
+app:columnCount
+app:rowCount
+app:layout_row
+app:layout_rowSpan
+app:layout_gravity
+*/
+
+<android.support.v7.widget.GridLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/gridLayout"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:columnCount="3"
+	android:rowCount="3">
+	<Button
+		android:layout_width="128dp"
+		android:layout_height="84dp"
+		android:text="1, 2"
+		app:layout_column="0"
+		app:layout_row="0"
+		app:layout_columnSpan="2" />
+	<Button
+		android:layout_width="64dp"
+		android:layout_height="64dp"
+		android:text="3"
+		app:layout_column="2"
+		app:layout_row="0" />
+	<Button
+		android:layout_width="64dp"
+		android:layout_height="64dp"
+		android:text="4"
+		app:layout_column="0"
+		app:layout_row="1" />
+	<Button
+		android:layout_width="64dp"
+		android:layout_height="64dp"
+		android:text="5"
+		app:layout_column="1"
+		app:layout_row="1" 
+		/>
+	<Button
+		android:layout_width="64dp"
+		android:layout_height="64dp"
+		android:text="6, 9"
+		app:layout_column="2"
+		app:layout_row="1"
+		app:layout_rowSpan="2" />
+	<Button
+		android:layout_width="64dp"
+		android:layout_height="64dp"
+		android:text=""
+		app:layout_column=""
+		app:layout_row="" />
+	<Button
+		android:layout_width="64dp"
+		android:layout_heigth="64dp"
+		android:text="8"
+		app:layout_column="1"
+		app:layout_row="2" />
+</android.support.v7.widget.GridLayout>
+
+
+//layout
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/android"
+	android:layout_width="match_parent"
+	android:layotu_height="match_parent" >
+	<Button
+		android:layout_widht="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="center|top"
+		android:text="SHOW"
+		/>
+	<include
+		layout="@layout/activity_include"
+		/>
+</FrameLayout>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	andorid:layout_height="match_parent"
+	android:orientation="horizontal" >
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom"
+		android:text="BUTTON"
+		/>
+</LinearLayout>
+
+
+
+
