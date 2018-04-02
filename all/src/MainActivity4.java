@@ -73,7 +73,22 @@ ActionBar.OnNavigationListener mOnNavigationListener = new ActionBar.OnNavigatio
 
 @Override
 public boolean onCreateOptionsMenu(Menu menu){
+  MenuItem menuItem = menu.findItem(R.id.menu_share_action_provider);
+  SharedActionProvider sap = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
+  sap.setShareHistoryFileName(ShareActionProvider.DEFAULT_SHARE_HISTROY_FILE_NAME);
 
+  Intent sharedIntent = new Intent();
+  sharedIntent.setAction(Intent.ACTION_SEND)
+	  .setType("text/plain")
+	  .putExtra(Intent.EXTRA_TEXT, "http:gihyo.co.jp/");
+  sap.seShareIntent(shareintent);
+
+  MenuItem menuItemRecent = menu.findItem(R.id.menu_share_action_provider_recent);
+  ShareActionProvider sapRecent = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItemRecent);
+  sapRecent.setShareHistoryFileName(ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME);
+  sapRecent.setShareIntent(shareIntent);
+
+  return true;
 }
 
 

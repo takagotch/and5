@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto" >
+	<item
+		android:id="@+id/menu_share.action_provider"
+		android:title="ACTION SHARED"
+		app:showAsAction="always"
+		app:actionProviderClass="android.support.v7.widget.SharedActionProvider" />
+	<item
+		android:id="@+id/menu_share_action_provider_recent"
+		android:title="ACTION HISTROY"
+		app:showAction="never"
+		app:actionProviderClass="android.support.v7.widget.ShareActionProvider" />
+</menu>
+
