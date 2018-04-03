@@ -128,7 +128,83 @@ italic
 	/>
 
 
+/*
+android:text
+android:hint
+android:inputType
+*/
+<EditText
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:hint="INPUT"
+	android:textSize="24dp"
+	/>
 
+<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/root_ToastOrigin"
+	android:layout_width="match_Origin"
+	android:layout_height="match_parent"
+	android:layout_margin="15dp"
+	android:padding="18dp"
+	android:orientation="horizontal"
+	android:background="#DDABABA0" >
+	<ImageView
+		android:id="@+id/ivContent"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginRight="10dp"
+		android:src="@android:drawable/btn_star"
+		/>
+	<TextView
+		android:id="@+id/tvMessage"
+		android:layout_width="wrap_content"
+		android:layout_heigt="wrap_content"
+		android:textColor="#FFF"
+		android:text="TOAST"
+		android:layout_gravity="center_vertical"
+		/>
+</LinearLayout>
+
+//android:text
+//android:onClick
+<Button
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="CLICK"
+	android:onClick="onClickEvent"
+	/>
+
+//android:src
+<ImageButton
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:src="@android:drawable/star_big_on"
+	android:onClick="onClickEvent">
+
+//android:checkedButton
+//android:checked
+<RadioGroup
+	android:id="@+id/grp_color"
+	android:checkButton="@+id/rbtn_white"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+	<RadioButton
+		android:id="@id/rbtn_white"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="WHITE" />
+	<RadioButton
+		android:id="@+id/rbtn_blue"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="BLUE" />
+	<RadioButton
+		android:id="@+id/rbtn_yellow"
+		android:layout="match_parent"
+		android:height="wrap_content"
+		android:text="YELLOW" />
+</RadioGroup>
 
 
 
