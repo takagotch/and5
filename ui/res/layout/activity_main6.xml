@@ -1,0 +1,115 @@
+//android:entries
+//android:list
+//android:empty
+
+<ListView
+	android:id="@+id/android:list"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	/>
+<LinearLayout android:id="@+id/android:empty"
+	android:layout_width="wrap_content"
+	android:height="wrap_content" >
+	<TextView
+		android:id="@+id/android:empty"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="NODATA"
+		/>
+</LinearLayout>
+
+/*
+SimpleExpandableListAdapter(
+  Context contex,
+  List< Extends Map<String, >> groupData,
+  int groupLayout,
+  String[] groupFrom,
+  int[] groupTo,
+  List< extends List< extends Map<String,>>> childData,
+  int childLayout,
+  String[] childFrom,
+int[] childTo)
+
+void setAdapter(ExpandListAdapter adapter)
+*/
+<ExpandableListView
+	android:id="@+id/expandableListView"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	/>
+
+//android:numColumns
+<GridView
+	android:id="@+id/gridView"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:numColumns="3"
+	/>
+
+<Chronometer
+	android:id="@+id/chronoMeter"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	/>
+
+<SeekBar
+	android:id="@+id/seekBar"
+	android:layout_width="match_parent"
+	android:layout_height="match_content"
+	/>
+
+<Spinner
+	android:id="@+id/spinnerAge"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	/>
+
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/scrollView"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<LinearLayout
+		android:id="@+id/layoutTarget"
+		andorid:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		/>
+</ScrollView>
+
+<DatePicker
+	android:id="@+id/datePicker"
+	android:layout_width="wrap_content"
+	android:layotu_height="wrap_content"
+	/>
+
+<TimePicker
+	android:id="@+id/timePicker"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	/>
+
+<NumberPicker
+	android:id="@+id/numberPicker"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

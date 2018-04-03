@@ -110,5 +110,47 @@ chk_state.setOnCheckedChhangeListener(new CompoundButtton.OnCheckedChangeListene
   }
 });
 
+//void setOnRatingBarChangeListener(RatingBar.OnRatingBarChangeListener)
+//void onRatingChange(RatingBar ratingBar, float rating, boolean fromUser)
+
+RatingBar rbar_state = (RatingBar)findViewById(R.id.rbar_state);
+rbar_statee.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener(){
+  @Override
+  public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser){
+    Toast.makeText(getApplicationContext(), "SHOW " + rating + " ", Toast.LENGTH_SHORT).show();
+  }
+});
+
+//void loadUrl(String url)
+//android.permission.INTERNET
+WebView webView = (WebView) findViewById(R.id.webView);
+switch(item.getItemId()){
+case R.id.menu_loadUrl:
+	webView.loadUrl("http://www.gihyo.co.jp");
+	return true;
+case R.id.menu_loadAsset:
+	webView.loadUrl("file://android_asset/hello.html");
+	return true;
+case R.id.menu_loadSD:
+	webView.loadUrl("file://sdcard/sd.html");
+	return true;
+}
+
+//void loadData(String data, String mimeType String encoding)
+//void loadDataWithBase(String baseUrl, String data, String mimeType, String encoding, String histroyUrl)
+
+case R.id.menu_loadData:
+  String srcHtml =
+    "<!DOCTYPE html><html><head>" +
+    "<meta charset='UTF-8'>" +
+    "<title>TITLE</title>" +
+    "</head><body>" +
+    "text" +
+    "</body></html>";
+  webView.loadDataWithBaseURL(null, srcHtml, "text/html", "UTF-8", null);
+  return true;
+
+
+
 
 
