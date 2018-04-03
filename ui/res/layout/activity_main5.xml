@@ -1,0 +1,138 @@
+<LinearLayout
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="#ffff00">
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="#00ff00"
+		android:text="TEXT1"
+		android:padding="20dp"
+		/>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="#00ffff"
+		android:text="TEXT2"
+		android:padding="20dp"
+		/>
+</LinearLayout>
+
+/*
+TOP
+BOTTON
+RIGHT
+LEFT
+CENTER
+CENTER_VERTICAL
+CENTER_HORIZONTAL
+FILL
+FILL_VERTICAL
+FILL_HORIZONTAL
+CLIP_VERTICAL
+CLIP_VERTICALA
+android:gravity
+android:layout_gravity
+top
+bottom
+right
+left
+center
+center_vertical
+center_horizontal
+fill
+fill_vertical
+fill_horizontal
+clip_vertical
+clip_horizontal
+*/
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="horizontal" >
+	<TextView
+		android:layout_width="100dp"
+		android:layout_height="wrap_content"
+		android:background="#ffff00"
+		android:text="CENTER"
+		android:layout_gravity="center_vertical"
+		android:gravity="center"
+		/>
+</LinearLayout>
+
+
+
+
+<LinerLayout
+	android:layout_width="match_parent"
+	android:layout_width="wrap_content"
+	android:orientation="horizontal"
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:text="BUTTON1"
+		/>
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:text="BUTTON2"
+		/>
+</LinearLayout>
+
+//android:text
+//android:textColor
+<TextView
+	android:id="@+id/tvPoken"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="@string/hello_pokeri"
+	android:textColor="#0f0"
+	/>
+
+//android:textSize
+<TextView
+	android:id="@+id/tvHello"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Hello"
+	android:textSize="12dp"
+	/>
+
+/*
+DEFAULT
+SANS_SEFIF
+MONOSPACE
+BOLD
+ITALIC
+BOLD_ITALIC
+android:typeface
+android:textStyle
+normal
+sans
+serif
+monospace
+norimal
+bold
+italic
+*/
+<TextView
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Hello"
+	android:typeface="monospace"
+	android:textStyle="italicbold"
+	/>
+
+
+
+
+
+
+
+
+
+
