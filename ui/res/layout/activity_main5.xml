@@ -207,8 +207,31 @@ android:inputType
 </RadioGroup>
 
 
+<ToggleButton
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:checked="true"
+	android:textOn="EXSECUTE"
+	android:textOff="STOP"
+	/>
 
+//android:checked
+<CheckBox
+	android:id="@+id/chkState"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="CHK BOX"
+	/>
 
+//android:rating
+//android:numStars
+<RatingBar
+	android:id="@+id/rbtn_state"
+	android:layout_width="wrap_conten"
+	android:layout_height="wrap_content"
+	android:rating="2"
+	android:numStarts="5"
+	/>
 
 
 

@@ -97,8 +97,18 @@ grpColor.setOnCheckedChanged(RadioGroup group, int checkedId){
 };
 
 
-//void setTextOn()
-//void setTextOff()
+//void setTextOn(CharSquence textOn)
+//void setTextOff(CharSquence textOff)
+CheckBox chk_state = () findViewById(R.id.chk_state);
+chk_state.setOnCheckedChhangeListener(new CompoundButtton.OnCheckedChangeListener(){
+  public void onCheckedChanged(CompoundButton buttonView, boolean isChecked){
+    if(true == isChecked){
+      Toast.makeText(buttonView.getContext(), "CHK: ON", Toast.LENGTH_SHORT).show();
+    } else {
+      Toast.makeText(buttonView.getContext(), "CHK: OFF", Toast.LENGTH_SHORT).show();
+    }
+  }
+});
 
 
 
