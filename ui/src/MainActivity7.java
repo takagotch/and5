@@ -503,6 +503,187 @@ public boolean onContextItemSelected(MenuItem item){
   return super.onContextItemSelected(item);
 }
 
+//void setOnClickListener(OnClickListener l)
+//void onClick(View v)
+
+Button btn_click = (Button) findViewById(R.id.btn_click);
+btn_click.setOnClickListener(new View.OnClickListener(){
+  @Override
+  public void onClick(View v){
+    Toast.makeText(v.getContext(), "BTNCLICK", Toast.LENGTH_SHORT).show();
+  }
+});
+
+
+//void setOnLongClickListener(OnLongClickListener l)
+//boolean onLongClick(View v)
+Button btn_longClick = (Button) findViewById(R.id.btn_longClick);
+btn_longClick.setOnLongClickListener(new View.OnLongClickListener(){
+  public boolean onLongClick(View v){
+    Toast.makeText(getApplicationContext(), "LONG EVENT", Toast.LENGTH_SHORT).show();
+    return false;
+  }
+});
+
+
+//boolean onTouchEvent(NotificationEvent event)
+//boolean onTouch(View v, MotionEvent event)
+
+@Override
+public boolean onTouchEvent(MotionEvent event){
+  int action = event.getAction();
+  switch(action){
+	  case MotionEvent.ACTION_DOWN:
+		  Toast.makeText(getApplicationContext(), "TOUCH:DOWN", Toast.LENGTH_SHORT).show();
+	  case MotionEvent.ACTION_UP:
+		  Toast.makeText(getApplicationContext(), "TOUCH:DOWN", Toast.LENGTH_SHORT).show();
+  }
+  return false;
+}
+
+
+//void setAdapter(PagerAdapter adapter)
+//FragmentStatePager Adapter(FragmentManager fm)
+//Fragment getItem(int position)
+//int getCount()
+//CharSequence getPageTitle(int positon)
+//FragmentStatePagerAdapter
+private MyFragmentPagerAdapter mPagerAdapter = null;
+private ViewPager mViewPager = null;
+
+@Override
+protected void onCreate(Bundle savedInstanceState){
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+
+  mPagerAdapter = new MyFragmentPagerAdapter(SupportFragmentManager());
+
+  mViewPager = (ViewPager) findViewById(R.id.viewPager);
+  mViewPager.setAdapter(mPagerAdapter);
+}
+
+@Override
+public boolean onCreateOptionsMenu(Menu menu){
+  getMenuInflater().inflate(R.menu.main, menu);
+  return true;
+}
+
+public class MyFragmentPagerAdapter extends FragmentStatePagerAdapter {
+  public MyFragmentPagerAdapter(FragmentManager fm){
+    super(fm);
+  }
+
+  @Override
+  public Fragment getItem(int position){
+    switch(positon){
+	    case 0:
+		    return new FristFragment();
+	    case 1:
+		    return new SecondFragment();
+	    case 2:
+		    return new ThirdFragmetn();
+    }
+  }
+
+  @Override
+  public int getCount(){
+    return 3;
+  }
+
+  @Override
+  public CharSequence getPageTitle(int position){
+    return "Page: " + position;
+  }
+}
+
+//ActionBarDrawerToggle(Activity activity, DrawerLayout drawerLayout, int drawerImageRes, int openDrawerContentDescRes, int closeDrawerContentDescRes)
+//void onDrawerOpened(View drawerView)
+//void onDrawerClosed(View drawerView)
+//void onDrawerSlide(View drawerView, float slideOffset)
+//void onDrawerStateChangeed(int newState)
+//void setDrawerListener(DrawerListener listener)
+//void openDrawer(int gravity)
+//void clsoeDrawers()
+//
+//LEFT
+//RIGHT
+//START
+
+private static final String TAG = ".MainActivity";
+
+private ActionBarDrawerToggle mDrawerToggle = null;
+private DrawerLayout mDrawerLayout = null;
+
+@Override
+protected void onCreate(Bundle savedInstanceState){
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+
+  mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+  mDrawerToggle = new ActionBarDrawerToggle(this,
+	mDrawerLayout, R.drawable.ic_drawer,
+	R.string.drawer_open, R.string.drawer_close){
+    @Override
+    public void onDrawerOpened(View drawerView){
+      super.onDrawerOpened(drawerView);
+      Log.i(TAG, "call: onDrawerOpened()");
+    }
+
+    @Override
+    public void onDrawerClosed(View drawerView){
+      super.onDrawerClosed(drawerView);
+      Log.i(TAG, "call: onDrawerClosed()");
+    }
+
+    @Override
+    public void onDrawSlide(View drawerView, float slideOffset){
+      super.onDrawerSlide(drawerView, slideOffset);
+      Log.i(TAG, "call: onDrawSlide()");
+    }
+
+    @Override
+    public void onDrawStateChannged(View drawerView, float slideOffset){
+      super.onDrawerStateChange(newState);
+      Log.i(TAG, "call: onDrawerStateChanged()");
+    }
+  };
+
+  mDrawerLayout.setDrawerListener(mDrawerToggle);
+
+  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+  getSupportActionBar().setHomeButtonEnabled(true);
+}
+
+@Override
+public boolean onCreateOptionsMenu(Menu menu){
+  getMenuIflater().inflate(R.menu.main, menu);
+  return true;
+}
+
+@Override
+protected void onPostCreate(Bundle savedInstanceState){
+  super.onPostCreate(savedInstanceState);
+  mDrawerToggle.syncState();
+}
+
+@Override
+public void onConfiguratoinChanged(Configuration newConfig){
+  super.onConfigurationChanged(newConfig);
+  mDrawerToggle.onConfigurationChanged(newConfig);
+}
+
+@Override
+public boolean onOptionsItemSelected(MenuItem item){
+  if(mDrawerToggle.onOptionItemSelected(item)){
+    return true;
+  }
+
+  if(item.getItem() == R.id.action_drawer){
+    mDrawerLayout.openDrawer(Gravity.LEFT);
+  }
+
+  return super.onOptionsItemSelected(item);
+}
 
 
 

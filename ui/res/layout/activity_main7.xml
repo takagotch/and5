@@ -96,6 +96,49 @@ android:autoAdvanceViewId
 		/>
 </receiver>
 
+<android.support.v4.view.ViewPager
+	xmlns:android="http://schemas.android.com/apk/android"
+	android:id="@+id/viewPager"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" >
+	<android.support.v4.view.PagerTabStrip
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="top"
+		android:background="#4169e1"
+		android:paddingBotton="5dp"
+		android:paddingTop="5dp"
+		android:textColor="#ffffff"
+		/>
+</android.support.v4.view.ViewPager>
+
+
+
+<android.support.v4.widget.DrawerLayout
+	xmlns:andorid="http://schemas.android.com/apk/android"
+	android:id="@+id/drawer_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<LinearLayout
+		android:id="@+id/layout_main"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		/>
+	<LinearLayout
+		android:id="@+id/navigation_drawer"
+		android:layout_width="240dp"
+		android:layout_height="match_parent"
+		android:layout_gravity="left"
+		android:background="#4169e1"
+		android:orientation="vertical">
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			android:text="NAVIGATION FIELD"
+			android:textSize="20sp">
+		</LinearLayout>
+</android.support.v4.widget.DrawerLayout>
 
 
 

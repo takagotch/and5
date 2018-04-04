@@ -12,4 +12,82 @@
 		/>
 </Preference>
 
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory
+		android:title="CHKBX">
+	</PreferenceCategory>
+	<PreferenceCategoty
+		android:title="TXTBX">
+	</PreferenceCategory>
+</PreferenceScreen>
+
+
+<PreferenceCategory
+	android:title="CHKBX">
+	<CheckBoxPreference
+		android:key="key_checkbox"
+		android:title="CHKLIST"
+		android:summary="CHKBX"
+		android:defaultValue="false" />
+</PrefereceCategory>
+
+
+<PreferenceCategory
+	android:title="EDITTXT">
+	<EditTextPreference
+		android:key="key_editText"
+		android:title="TXTINPUT"
+		android:summary="EDITTEXTLIST"
+		android:defaultValue="Hello" />
+</PreferenceCategory>
+
+<PreferenceCategory
+	android:title="LIST">
+	<ListPreference
+		android:key="key_list"
+		android:title="LIST SELECT"
+		android:summary="LIST BOX SELECT"
+		android:dialogTitle="LIST SELECT CHK"
+		android:entries="@array/listEntry"
+		android:entryValue="@array/listValue"
+		/>
+</PreferenceCategory>
+
+<PreferenceCategory
+	android:title="MULTI SELECT LIST">
+	<MultiSelectListPreference
+		android:key="key_multiList"
+		android:title="MULTI SELECT LIST"
+		android:summary="MULTI SELECT LIST"
+		android:dialogTitle="MULTI SELECT LIST DIALOG"
+		android:entries="@arrray/listEntry"
+		android:entryValues="@array/listValue"
+		/>
+</PreferenceCategory>
+
+<PreferenceCategory
+	android:title="SWITCH">
+	<SwitchPreference
+		android:key="key_switch"
+		android:title="SWITCH"
+		android:summary="SWITCH LIST"
+		android:switchTextOn="ON"
+		android:switchTextOff="OFF"
+		/>
+</PreferenceCategory>
+
+<PreferenceCategory
+	android:title="RING">
+	<RingtonePreference
+		android:key="key_ringtone"
+		android:title="RINGTONE"
+		android:summary="RINGTONE LIST"
+		android:ringtoneType="ringtone"
+		android:showDefault="true"
+		android:showSilent="false"
+		/>
+</PreferenceCategory>
+
+
+
 
