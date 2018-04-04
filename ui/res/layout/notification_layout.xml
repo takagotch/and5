@@ -1,3 +1,32 @@
+<LinearLayout
+	xmlns:android=""
+	android:layout_width=""
+	android:layout_height=""
+	android:orientation="">
+	<ImageView
+		android:id=""
+		android:layout_width=""
+		android:layout_height=""
+		android:contentDescriptin=""
+		/>
+	<LinearLayout
+		android:layout_width=""
+		android:layout_height=""
+		android:textSize="">
+		<TextView
+			android:id=""
+			android:layout_width=""
+			android:layout_height=""
+			android:textSize=""
+			/>
+		<TextView
+			android:id=""
+			android:layout_width=""
+			android:layout_height=""
+			/>
+	</LinearLayout>
+</LinearLayout>
+
 
 
 

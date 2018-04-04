@@ -174,26 +174,26 @@ public void sendInboxStyleNotification(View v){
   notificationManager.notify(NOTIFY_SAMPLE, InboxStyleNotification.build());
 }
 
-//NotificationCompat.Builder setContent()
-//RemoteViews()
-//void setTextViewText()
-//void setImageViewResource()
-//void setTextViewText()
+//NotificationCompat.Builder setContent(RemoteViews views)
+//RemoteViews(String packageName, int layoutId)
+//void setTextViewText(int viewId, CharSequence text)
+//void setImageViewResource(int viewId, int srcId)
+//void setTextViewText(int viewId, int units, float size)
 
 public void sendCustomNotification(View v){
   NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
 
-  RemoteViews remoteView = new RemoteViews();
-  remoteView.setImageViewResource();
-  remoteView.setTextViewText();
-  remoteView.setTextViewText();
-  builder.setContent();
+  RemoteViews remoteView = new RemoteViews(getPackageName(), R.layout.notification_layout);
+  remoteView.setImageViewResource(R.id.ivIcon, R.drawable.ic_launcher);
+  remoteView.setTextViewText(R.id.tvTitle, "TITLE");
+  remoteView.setTextViewText(R.id.tvMessage, "TEXT");
+  builder.setContent(remoteView);
 
-  builder.setSmallIcon();
-  builder.setAutoCancel();
+  builder.setSmallIcon(android.R.drawable.star_big_on);
+  builder.setAutoCancel(true);
 
-  NotificationManager notificationManager = () getSystemService();
-  notificationManager.notify();
+  NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+  notificationManager.notify(NOTIFY_SAMPLE, builder.build());
 }
 
 
