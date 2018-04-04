@@ -197,9 +197,311 @@ public void sendCustomNotification(View v){
 }
 
 
+//NotificationCompat.Builder addAction(int icon, CharSequence title, PendingIntent intent)
+
+public void sendButtonNotification(View v){
+  NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+
+  builder.setSmallicon(android.R.drawable.star_big_on);
+  builder.setTicker("SHOW");
+
+  builder.setContentTitle("TITLE");
+  builder.setContentText("TEXT");
+  builder.setContentInfo("NOTIF");
+
+  Intent intent1 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.co.jp"));
+  PendingIntent contentIntent1 = PendingIntent.getActivity(
+	this, REQUEST_SAMPLE, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+  builder.addAction(android.R.drawable.star_off, "Google", contentIntent1);
+  Intent intent2 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.gihyo.co.jp"));
+  PendingIntent contentIntent2 = PendingIntent.getActivity(
+	this, REQUEST_SAMPLE, intent2, PendingIntent.FLAG_UPDATE_CURRENT);
+  builder.addAction(android.R.drawable.star_off, "", contentIntent2);
+  Intent intent3 = new Intent(Intentt.ACTION_VIEW, Uri.parse("http;//buildbox.net/"));
+  PendingIntent contentIntent3 = PendingIntent.getActivity(
+	this, REQUEST_SAMPLE, intent3, PendingIntent.FLAG_UPDATE_CURRENT);
+  builder.addAction(android.R.drawable.star_off, "buildbox.net", contentIntent3);
+
+  builder.setWhen(System.currentTimeMillis());
+  builder.setAutoCancel(true);
+
+  NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+  notificationManager.notify(NOTIFY_SAMPLE, builder.build());
+}
+
+//PopupWindow(Context context)
+//void setWindowLayoutMode(int widthSpec, int heightSpec)
+//void setContentView(View contentView)
+//void showAsDropDown(View anchor)
+//void showAsDrop(View anchor, int xoff, int yoff)
+//showAtLocation(View parent, int gravity, int x, int y)
+//void dismiss()
+private PopupWindow mPopup = null;
+public void showPopupWindow(View v){
+  LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SEVICE);
+  View popupView = (View) inflater.inflate(R.layout.popup_layout, null);
+
+  mPopup = new PopupWindow(this);
+
+  mPopup.setWindowLayoutMode(
+	ViewGroup.LayoutParams.WRAP_CONTENT,
+	ViewGroup.LayoutParams.WRAP_CONTENT);
+
+  mPopup.setContentView(popupView);
+
+  Button btnPopup = (Button) findViewById(R.id.btnPopup);
+  mPopup.showAsDropDown(btnPopup);
+}
+
+public void onPopup(View v){
+  mPopup.dismiss();
+}
+
+//ListPopupWindow(Context context)
+//void setAdapter(AdapterView adapter)
+//void setOnItemClickListener(AdapterView.OnItemClickListener clickListener)
+//void setAnchorView(View anchor)
+//void setHorizontalOffset(int offset)
+//void setVerticalOffset(int offset)
+//void setAnimationStyle(int offset)
+//void setAnimationStyle(int animationStyle)
+//void setBackgroundDrawable(Drawable d)
+//void setPromptView(View prompt)
+//void setPromptPosition(int position)
+//void show()
+
+private ListPopupWindow mListPopup = null;
+public void showListPopupWindow(View v){
+  mListPopup = new ListPopupWindow(this);
+
+  String[] fruits = {"", "", "", ""};
+  ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+	android.R.layout.simple_list_item_1, fruits);
+  mListPopup.setAdapter(adapter);
+
+  mListPopup.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+    @Override
+    public void onItemClicck(AdapterView<?> adapter, View v, int position, long id){
+      String fruit = (String) adapter.getItemAtPosition(position);
+      Toast.makeText(getApplicationContext(), fruit + "", Toast.LENGTH_SHORT).show();
+      mListPopup.dismiss();
+    }
+  });
+
+  Button btnPopup = (Button) findViewById(R.id.btnPopup);
+  mListPopup.setAnchorView(btnPopup);
+
+  mListPopup.show();
+}
+
+//boolean startDrag(ClipData data, View, DragShadowBuilder shadowBuilder, Object mLocalState, int flags)
+//boolean onDragEvent(DragEvent event)
+//void setDragListener(View, OnDragListener l)
+//int getAction()
+//ClipData getClipData()
+//ClipDescripton getClipDescription()
+//Object getLocalState()
+//boolean getResult()
+//float getX()
+//float getY()
+//onDrag(View v, DragEvent event)
+//DragShadowBuilder(View v)
+//void onDragShadow(Canvas canvas)
 //
+//ACTION_DRAG_STARTED
+//ACTION_DRAG_ENDED
+//ACTION_DRAG_ENTERED
+//ACTION_DRAG_EXITED
+//ACTION_DRAG_LOCATION
+//ACTION_DROP
+
+@Override
+protected void onCreate(Bundlle savedInstancceState){
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+
+  DragView iv_drag = (DragView) findViewById(R.id.iv_drag);
+  iv_drag.setOnTouchListener(this);
+
+  ImageView iv_drop = (ImageView) findViewById(R.id.iv_drop);
+  iv_drop.setOnDragListener(new View.OnDragListener(){
+    @Override
+    public boolean onDrag(View v, DragEvent event){
+      if(event.getAction() == DragEvent.ACTION_DROP){
+        for(int i = 0; i < clipData.getItemCount(); i++){
+	  ClipData.Item item = clipData.getItemAt(i);
+	  Toast.makeText(getApplicationContext(),
+		item.coerceToText(getApplicationContext()),
+		Toast.LENGTH_SHORT).show();
+	}
+      }
+      return false;
+    }
+  });
+}
+
+@Override
+public boolean onCreateOptionsMenu(Menu menu){
+  getMenuInflater().inflate(R.menu.main, menu);
+  return true;
+}
+
+@Override
+public boolean onTouch(View v, MotionEvent event){
+  switch(event.getAction()){
+  case MotionEvent.ACTION_MODE:
+	  ClipData clipData = ClipData.newPlainText("label", "DROP");
+	  v.startDrag(clipData, new DragShadowBuilder(v), null, 0);
+	  return true;
+  }
+  return false;
+}
+
+//void setOnDateChangeListener(CalendarView.OnDataChangeListener listener)
+//void onSelectedDayChange(
+//  CalendarView view,
+//  int year,
+//  int month,
+//  int dayOfMonth)
+CalendarView calView = (CalendarView) findViewById(R.id.calendarView);
+calView.setOnDataChangeListener(new OnDataChangeListener(){
+  @Override
+  public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth){
+    Toast.makeText(
+	  view.getContext(),
+	    "SELECT " + year + "/" + (month + 1) + "/" + dayOfMonth + " ",
+	    Toast.LENGTH_SHORT).show();
+  }
+});
 
 
+//void setOnCheckedChangeListener (OnCheckedChange Listener listener)
+//void onCheckedChange(CompoundButton buttonView, boolean isChecked)
+Switch sw = (Switch) findViewById(R.id.switchState):
+sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+  @Override
+  public void onCheckedChanged(CompoundButton buttonView, boolean isChecked){
+    if(isChecked){
+      Toast.makeText(buttonView.getContext(), "On", Toast.LENGTH_SHORT).show();
+    } else {
+      Toast.makeText(buttonView.getContext(), "Off", Toast.LENGTH_SHORT).show();
+    }
+  }
+});
+
+//boolean onCreateOptionMenu(Menu menu)
+//boolean onPropareOptionsMenu(Menu menu)
+//MenuInflater getMenuInflater()
+//void inflate(int menuRes, Menu menu)
+//MenuItem add(int groupId, int itemId, int orderId, CharSequence title)
+//Item setIcon(int iconRes)
+//Item setIcon(Drawable icon)
+//
+//NONE
+//FIRST
+private static final int MENU_SAMPLE = Menu.FIRST;
+
+@Override
+public boolean onCreateOptionsMenu(Menu menu){
+  getMenuInflater().inflate(R.menu.main, menu);
+  
+  MenuItem item = menu.add(Menu.NONE, MENU_SAMPLE, 600, "MENU");
+
+  item.setIcon(android.R.drawable.ic_menu_camera);
+  item.setShowAsAction(MenuItem.SHOW_ACTION_ALWAYS);
+
+  return true;
+}
+
+
+//boolean onOptionItemSelected(MenuItem item)
+//int getItemId()
+@Override
+public boolean onOptionitemSelected(MenuItem item){
+  switch (item.getItem.id()){
+	  case R.id.menu_item1:
+		  Toast.makeText(this, "ITEM SELECT", Toast.LENGTH_SHORT).show();
+		  return true;
+	  case MENU_SAMPLE:
+		  Toast.makeText(this, "SELECT MENU", Toast.LENGTH_SHORT).show();
+		  return true;
+  }
+
+  return super.onOptionsItemSelected(item);
+}
+
+
+//PopupMenu(Context context, View anchor)
+//MenuInflater getMenuInflater()
+//Menu getMenu()
+//void show()
+//
+//void inflate()
+
+public void showPopupMenu(View v){
+  PopupMenu popupMenu = new PopupMenu(this, v);
+
+  popupMenu.getMenuInflater().inflate(R.menu.popup_main, popupMenu.getMenu());
+
+  popupMenu.show();
+}
+
+
+//void setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener listener)
+//boolean onMenuItemClick(MenuItem item)
+popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener(){
+  @Override
+  public boolean onMenuItemClick(MenuItem item){
+    switch(item.getItemId()){
+    case R.id.menu_item1:
+    case R.id.menu_item2:
+    case R.id.menu_item3:
+    case R.id.menu_item4:
+    case R.id.menu_item5:
+	    Toast.makeText(
+		getApplicationContext(),
+		item.getTitle() + " SELECT",
+		Toast.LENGTH_SHORT).show();
+	    return true;
+    default:
+	    break;
+    }
+    return false;
+  }
+});
+
+
+//void registerForContextMenu(View view)
+//void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuinfo menuInfo)
+
+@Override
+protected void onCreate(Bundle savedInstanceState){
+  ListView lvFruits = (ListView) findViewById(R.id.lvFruits);
+  registerForContextMenu(lvFruits);
+}
+
+@Override
+public void onCreateContextMenu(ContextMenu menu, View v,
+		ContextMenuInfo menuInfo){
+  super.onCreateContextMenu(menu, v, menuInfo);
+
+  getMenuInflater().inflate(R.menu.context_menu, menu);
+}
+
+//boolean onContextItemSelected(MenuItem item)
+@Override
+public boolean onContextItemSelected(MenuItem item){
+  switch (item.getItemId()){
+	  case R.id.menu1:
+	  case R.id.menu2:
+	  case R.id.menu3:
+		  Toast.makeText(this, item.getTitle() + " SELECT", Toast.LENGTH_SHORT).show();
+		  return true;
+		  break;
+  }
+
+  return super.onContextItemSelected(item);
+}
 
 
 

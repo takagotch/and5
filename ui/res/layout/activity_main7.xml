@@ -1,0 +1,101 @@
+<CalendarView
+	android:id="@+id/calendarView"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" />
+
+<Switch
+	android:id="@+id/switchState"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="STATUS"
+	/>
+
+/*
+android:orderInCategory
+android:title
+android:enabled
+android:showAsAction
+android:checkableBehavior
+always
+ifRoom
+never
+withRoom
+collapseActionView
+none
+single
+all
+*/
+
+<menu xmlns:android="http://schemas.anroid.com/res/android">
+	<item
+		android:id="@+id/menu_item1"
+		android:orderInCategory="100"
+		android:showAsAction="never"
+		android:title="ITEM1"/>
+	<item
+		android:id="@+id/menu_item2"
+		android:orderInCategory="200"
+		android:showAsAction="never"
+		android:title="ITEM2"/>
+	<item
+		android:id="@+id/menu_item3"
+		android:orderInCategory="300"
+		android:showAsAction="never"
+		android:title="ITEM3"
+		android:enabled="false"/>
+	<group
+		android:id="@+id/menu_group1"
+		android:checkableBehavior="single">
+		<item
+			android:id="@+id/menu_item4"
+			android:orderInCategory="400"
+			android:showAsAction="never"
+			android:title="ITEM4"
+			android:checked="true"/>
+		<item
+			android:id="@+id/menu_item5"
+			android:orderInCategory="500"
+			android:showAsAction="never"
+			android:title="ITEM5"/>
+	</group>
+</menu>
+
+/*
+android:initalLayout
+android:minWidth
+android:minHeihgt
+android:updatePeriodMillis
+android:autoAdvanceViewId
+*/
+<?xml version="1.0" encoding="utf-8" ?>
+<appwidget-provider
+	xmlns:android="http://schemas.android.com/apk/android"
+	android:initialLayout="@layout/appwidget_main"
+	andorid:minWith="146dp"
+	android:minHeight="72dp"
+	android:updatePeriodMillis="86400000">
+</application-provider>
+
+<appwidget-provider
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:initialLayout="@layout/appwidget_main"
+	android:minWidth="250dp"
+	android:minHeight="48dp"
+	android:updatePeriodMillis="86400000">
+</appwidget-provider>
+
+<receiver
+	android:name="net.build.buildbox.pokeri.ui_appwidget.WidgetProvider"
+	android:label="ui_AppWidget">
+	<intent-filter>
+		<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+	</intent-filter>
+	<meta-data
+		android:name="android.appwidget.provider"
+		android:resource="@xml/provider"
+		/>
+</receiver>
+
+
+
+
