@@ -174,7 +174,29 @@ public void sendInboxStyleNotification(View v){
   notificationManager.notify(NOTIFY_SAMPLE, InboxStyleNotification.build());
 }
 
-//
+//NotificationCompat.Builder setContent()
+//RemoteViews()
+//void setTextViewText()
+//void setImageViewResource()
+//void setTextViewText()
+
+public void sendCustomNotification(View v){
+  NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+
+  RemoteViews remoteView = new RemoteViews();
+  remoteView.setImageViewResource();
+  remoteView.setTextViewText();
+  remoteView.setTextViewText();
+  builder.setContent();
+
+  builder.setSmallIcon();
+  builder.setAutoCancel();
+
+  NotificationManager notificationManager = () getSystemService();
+  notificationManager.notify();
+}
+
+
 //
 
 
